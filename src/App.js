@@ -1,9 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import SocketService from "./socket";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [state, setState] = useState(1);
+  const socket = new SocketService();
+
   return (
     <div className="App">
+      <button onClick={(e) => setState((s) => s + 1)}>{state}</button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
